@@ -5,7 +5,7 @@ namespace LeagueFiveBotPracticeTool
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             foreach (Process process in LeagueClient.GetLeagueClientProcesses())
             {
