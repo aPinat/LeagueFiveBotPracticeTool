@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace LeagueFiveBotPracticeTool
 {
-    class LeagueClient
+    internal static class LeagueClient
     {
         private static readonly Regex TokenRegex = new Regex("\"--remoting-auth-token=(.+?)\"");
         private static readonly Regex PortRegex = new Regex("\"--app-port=(\\d+?)\"");
@@ -26,12 +27,8 @@ namespace LeagueFiveBotPracticeTool
 
             public string Token { get; }
         }
-        public static Process[] GetRiotClientProcesses()
-        {
-            return Process.GetProcessesByName("RiotClientUx");
-        }
 
-        public static Process[] GetLeagueClientProcesses()
+        public static IEnumerable<Process> GetLeagueClientProcesses()
         {
             return Process.GetProcessesByName("LeagueClientUx");
         }
