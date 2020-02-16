@@ -13,8 +13,8 @@ namespace LeagueFiveBotPracticeTool
 {
     internal static class LeagueClient
     {
-        private static readonly Regex TokenRegex = new Regex("\"--remoting-auth-token=(.+?)\"");
-        private static readonly Regex PortRegex = new Regex("\"--app-port=(\\d+?)\"");
+        private static readonly Regex TokenRegex = new Regex("--remoting-auth-token=(.+?)\\s");
+        private static readonly Regex PortRegex = new Regex("--app-port=(\\d+?)\\s");
         public class ApiAuth
         {
             public ApiAuth(string port, string token)
